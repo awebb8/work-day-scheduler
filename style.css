@@ -28,19 +28,13 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
-  justify-content: center;
-}
-
-.hide {
-  display: none;
 }
 
 .hour {
