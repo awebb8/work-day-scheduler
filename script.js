@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
   // Display the current day at the top of the calendar
   var currentDayEl = $("#currentDay");
   var today = moment().format("dddd, MMMM, Do");
@@ -9,7 +9,6 @@ $(document).ready(function () {
   // for loop where i is the hour.  This loop creates a new row and adds the time to each one.
   for (var i = 9; i <= 17; i++) {
     var hourIndex = i;
-    console.log(hourIndex);
 
     var hour = 0;
     // Add AM or PM to each hour
@@ -22,7 +21,7 @@ $(document).ready(function () {
     }
 
     // Create timeblock rows
-    var newRowDiv = $('<div class="row" id="time-text-save">');
+    var newRowDiv = $('<div class="row time-block">');
     // Create a div to display the time from 9am-5pm
     var timeDisplayDiv = $('<div class="col-sm-1 hour">');
     // When a timeblock is clicked, text can be entered by using <textarea>
@@ -43,7 +42,8 @@ $(document).ready(function () {
 
     // Color code each timeblock to indicate whether it is in the past, present, or future
     // Set the current hour
-    var currentHour = moment().hour();
+    // var currentHour = moment().hour();
+    var currentHour = 11;
    
     if (i < currentHour) {
         textAreaColumn.addClass("past");
