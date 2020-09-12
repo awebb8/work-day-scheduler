@@ -42,8 +42,7 @@ $(document).ready(function () {
 
     // Color code each timeblock to indicate whether it is in the past, present, or future
     // Set the current hour
-    // var currentHour = moment().hour();
-    var currentHour = 11;
+    var currentHour = moment().hour();
    
     if (i < currentHour) {
         textAreaColumn.addClass("past");
