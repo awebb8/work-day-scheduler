@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
   // Display the current day at the top of the calendar
   var currentDayEl = $("#currentDay");
   var today = moment().format("dddd, MMMM, Do");
@@ -26,17 +27,21 @@ $(document).ready(function () {
     var timeDisplayDiv = $('<div class="col-sm-1 hour">');
     // When a timeblock is clicked, text can be entered by using <textarea>
     var textAreaColumn = $('<textarea class="col-sm-10">');
+    // Create a Save button
     var buttonColumn = $('<button class="col-sm-1 btn saveBtn">');
+    // Add class to display the lock image in the Save button
     var buttonLock = $('<i class="fas fa-lock">');
 
     // Display the hour for each timeblock
     timeDisplayDiv.text(hour);
+
+    // get local storage (for the text in <textarea>)
     textAreaColumn.text(localStorage.getItem(JSON.stringify(i)));
 
-
+    // Add a unique id to each button
     buttonColumn.attr("id", i);
 
-    // WHEN I view the timeblocks for that day, each timeblock is color coded to indicate whether it is in the past, present, or future
+    // Color code each timeblock to indicate whether it is in the past, present, or future
     // Set the current hour
     var currentHour = moment().hour();
    
@@ -50,6 +55,7 @@ $(document).ready(function () {
         textAreaColumn.addClass("future");
     }
 
+    // Append timeblock rows to the repeat rows div
     $("#repeat-rows").append(newRowDiv);
     newRowDiv.append(timeDisplayDiv);
     newRowDiv.append(textAreaColumn);
